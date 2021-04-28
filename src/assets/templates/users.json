@@ -1,0 +1,13 @@
+[
+    {
+    "email":"abc@gmail.com",
+    "password":"123",
+    "authenticated":true
+
+    },
+    {
+        "email":"rohit@gmail.com",
+        "password":"123",
+        "authenticated":false
+    }
+]
