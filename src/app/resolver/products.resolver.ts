@@ -5,7 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import {Product, ProductService} from '@nagp/core';
+import {Product, ProductService} from '../core/public_api';
 
 @Injectable({
   providedIn: 'root'

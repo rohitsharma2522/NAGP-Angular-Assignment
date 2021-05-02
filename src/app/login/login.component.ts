@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from './login';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,15 +8,5 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
-
-  submitLoginForm(): void {
-    localStorage.setItem("isLoggedIn", 'Yes');
-    this.router.navigateByUrl('/dashbaard');
-  }
+export class LoginComponent {
 }

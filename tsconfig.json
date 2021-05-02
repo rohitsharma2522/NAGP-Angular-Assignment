@@ -20,9 +20,6 @@
   "paths": {
     "@nagp/core": [
       "src/app/core/public_api.ts"
-    ],
-    "@nagp/shared": [
-      "src/app/shared/public_api.ts"
     ]
   },
   "angularCompilerOptions": {

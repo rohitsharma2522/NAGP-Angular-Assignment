@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '@nagp/core';
+import { Product } from '../core/public_api';
 
 @Component({
   selector: 'app-dashboard',
