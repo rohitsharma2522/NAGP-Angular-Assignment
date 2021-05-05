@@ -10,13 +10,22 @@ import { Product } from '../core/public_api';
 export class DashboardComponent implements OnInit {
 
   products: Product[] = [];
-
-  constructor(private readonly route: ActivatedRoute, private readonly router: Router) { }
+  userLoggedIn : boolean = false;
+  constructor(private readonly route: ActivatedRoute, private readonly router: Router) { 
+    if(localStorage.getItem('isLoggedIn') === 'Yes'){
+      this.userLoggedIn = true
+    }
+  }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.products = data.productList;
     })
+  }
+
+  viewProduct(productCode: string) {
+    alert(productCode)
+    this.router.navigateByUrl('/product/' + productCode);
   }
 
 }

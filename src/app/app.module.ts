@@ -8,8 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     FormsModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
