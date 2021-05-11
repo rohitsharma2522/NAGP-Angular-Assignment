@@ -6,6 +6,9 @@ import {ProductDetailComponent} from '../app/product-detail/product-detail.compo
 
 import { ProductsResolver } from './resolver/products.resolver';
 import { ProductResolver } from './resolver/product.resolver';
+import { CartComponent } from './cart/cart.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -15,19 +18,22 @@ const routes: Routes = [
     }
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent, resolve: {
-      productList: ProductsResolver
-    }
+    path: 'product/:productId', 
+    component: ProductDetailComponent
   },
   {
-    path: 'product/:productId', component: ProductDetailComponent, resolve: {
-      product: ProductResolver
-    }
+    path: 'cart',
+    component: CartComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

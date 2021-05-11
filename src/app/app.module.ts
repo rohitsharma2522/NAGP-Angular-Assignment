@@ -11,6 +11,10 @@ import { LoginComponent } from './login/login.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -20,9 +24,13 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CartComponent,
+    CartQuantityComponent,
+    CheckoutComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,

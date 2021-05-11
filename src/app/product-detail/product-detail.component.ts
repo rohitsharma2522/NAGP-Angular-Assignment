@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../../app/core/public_api';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Product, ProductService } from '../../app/core/public_api';
+import { BehaviorSubject} from 'rxjs';
+import { CartService } from '../core/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,14 +13,28 @@ import { Product } from '../../app/core/public_api';
 export class ProductDetailComponent implements OnInit {
 
   product: any;
+  response = new BehaviorSubject<any>(null)
+  product_id: string;
+  quantity: number = 1;
 
-  constructor(private readonly route: ActivatedRoute) { }
+  constructor(private readonly route: ActivatedRoute, private readonly productService: ProductService, private readonly cartService: CartService) { }
 
-  ngOnInit(): void{
-    this.route.data.subscribe(data => {
-      console.log(data);
-      this.product = data.product;
-    })
+  ngOnInit(): any{
+    this.product_id = this.route.snapshot.params.productId;
+      console.log("prodid", this.product_id);
+      let data: Product[] = []
+      this.productService.getProducts().subscribe((res: Product[]) => {
+        console.log("data is ", res);
+        data = res.filter(o => {
+          return o.id === this.product_id;
+        });
+        return this.product = data[0];
+      });
   }
-
+  _addItemToCart(product): void {
+      return this.cartService.addToCart({product,quantity:this.quantity});
+  }
+  changeQuantity = (newQuantity:number) => {
+    this.quantity = newQuantity;
+};
 }

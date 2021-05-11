@@ -57,9 +57,9 @@ export class LoginService implements OnInit{
     }
   }
 
-  private isUserLoggedIn = new BehaviorSubject<boolean>(false);
+  // private isUserLoggedIn = new BehaviorSubject<boolean>(false);
 
-  isUserLoggedIn$ = this.isUserLoggedIn.asObservable();
+  // isUserLoggedIn$ = this.isUserLoggedIn.asObservable();
 
 
   logoutUser() {

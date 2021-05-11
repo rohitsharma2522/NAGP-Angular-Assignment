@@ -1,0 +1,14 @@
+img {
+    float: left;
+    width:  250px;
+    height: 200px;
+}
+.card-group {
+    justify-content: space-around;
+    padding-top:2rem;
+}
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+}

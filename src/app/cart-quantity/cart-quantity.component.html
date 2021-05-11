@@ -1,0 +1,7 @@
+<div class="number">
+    <input class="input-style" type="number" [ngModel]="quantity" (ngModelChange)="onChange.emit($event)">
+</div>
+<div class="actions">
+    <div (click)="addQuantity()" class="noselect">+</div>
+    <div (click)="minusQuantity()" class="noselect">-</div>
+</div>
