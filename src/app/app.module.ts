@@ -9,7 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +35,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AppRoutingModule,
     CoreModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng2SearchPipeModule,
   ],
   providers: [],
