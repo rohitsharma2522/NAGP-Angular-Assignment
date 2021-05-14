@@ -4,34 +4,82 @@
       "name": "M31 Dual Sim Phone",
       "brand": "Samsung",
       "color": "Navy Blue",
-      "price": 15000
+      "price": 15000,
+      "image":"../../assets/images/m31phone.jpg",
+      "description":"Quad Camera Setup - 64MP (F1.8) Main Camera +8MP (F2.2) Ultra Wide Camera +5MP(F2.2) Depth Camera +5MP(F2.4) Macro Camera and 32MP (F2.0) front facing Camera6.4-inch(16.21 centimeters) Super Amoled - Infinity U Cut Display , FHD+ Resolution (2340 x 1080) , 404 ppi pixel density and 16M color support",
+      "category":"Electronics"
     },
     {
       "id": "2",
       "name": "T-Shirt",
       "brand": "Duke",
       "color": "Black",
-      "price": 800
+      "price": 800,
+      "image":"../../assets/images/tshirt.jpg",
+      "description":"",
+      "category":"Clothing"
+
     },
     {
       "id": "3",
       "name": "Sports Shoes",
       "brand": "Reebok",
       "color": "White",
-      "price": 3500
+      "price": 3500,
+      "image":"../../assets/images/shoes.jpg",
+      "description":"Outer Material: Mesh, Closure Type: Lace-Up, Toe Style: Round Toe, Warranty Type: Manufacturer & Seller, Warranty Description: 30 days",
+      "category":"Footwear"
     },
     {
       "id": "4",
       "name": "Moto G6 Plus Phone",
       "brand": "Motorola",
       "color": "Black",
-      "price": 20000
+      "price": 20000,
+      "image":"../../assets/images/motophone.jpg",
+      "description":"Care Instructions: machine wash, Azul Blue, 100% Nylon, long sleeve, Machine wash",
+      "category":"Electronics"
+      
     },
     {
       "id": "5",
-      "name": "Jacket",
-      "brand": "Woodland",
+      "name": "Shirt",
+      "brand": "FlyingMAchine",
+      "color": "Brown",
+      "price": 1500,
+      "image":"../../assets/images/shirt.jpg",
+      "description":"",
+      "category":"Clothing"
+    },
+    {
+      "id": "6",
+      "name": "Headphone",
+      "brand": "Sony",
       "color": "Black",
-      "price": 6000
+      "price": 3500,
+      "image":"../../assets/images/headphones.jpg",
+      "description":"",
+      "category":"Electronics"
+
+    },
+    {
+      "id": "7",
+      "name": "EarPhones",
+      "brand": "JBL",
+      "color": "Black",
+      "price": 2000,
+      "image":"../../assets/images/wireless.jpg",
+      "description":"",
+      "category":"Electronics"
+    },
+    {
+      "id": "8",
+      "name": "Loafers",
+      "brand": "Tommy",
+      "color": "Black",
+      "price": 6000,
+      "image":"../../assets/images/loafers.jpg",
+      "description":"",
+      "category":"Footwear"
     }
   ]

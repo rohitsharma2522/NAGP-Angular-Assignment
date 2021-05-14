@@ -13,6 +13,8 @@ export class ProductService {
   private PRODUCT_SERVICE_BASE_URL = "/assets/templates";
   private searchString = new BehaviorSubject('');
   currentString = this.searchString.asObservable();
+  private category = new BehaviorSubject('');
+  searchByCategory = this.category.asObservable();
   // private _dataListSource: BehaviorSubject<Product[]> = new BehaviorSubject([]);
   // cartList:Observable<Product[]>  = this._dataListSource.asObservable();
 
@@ -36,6 +38,9 @@ export class ProductService {
   // }
   changeMessage(message: string) {
     this.searchString.next(message);
+  }
+  filterCategory(message: string) {
+    this.category.next(message);
   }
 
 }

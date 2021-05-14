@@ -1,6 +1,6 @@
 <div class="cart-page-container">
     <div class="cart-page-header">
-        <h1>Your Shopping Cart</h1>
+        <h1>{{'yourShoppingCart' | translate}}</h1>
     </div>
     <div class="cart-page-content" *ngIf="cartList.length > 0">
         <div class="cart-item-header cart-item-row">
@@ -63,7 +63,7 @@
         </div>
     </div>
     <div class="cart-page-content" *ngIf="cartList.length == 0">
-        <h4>Your cart is empty.</h4>
+        <h4>{{'emptyCart' | translate}}</h4>
         <a routerLink="/">Go shopping</a>
     </div>
 </div>

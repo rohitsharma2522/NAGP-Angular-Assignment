@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from './login';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login.service';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,27 @@ import { LoginService } from 'src/app/core/services/login.service';
 })
 export class LoginComponent {
   login: Login;
-  constructor(private router: Router, private loginService: LoginService) { 
-    this.login = new Login();
+  loginForm: FormGroup
+  serverError: boolean = false;
+  constructor(private router: Router, private loginService: LoginService, private toastrService: ToastrService, public formBuilder: FormBuilder) { 
+      this.loginForm = this.formBuilder.group({
+        username: ['', [Validators.required]],
+        password: ['', [Validators.required]],
+      })  
   }
 
 
-  submitLoginForm(loginForm: NgForm) {
-    localStorage.setItem("isLoggedIn", 'Yes');
-    this.loginService.validateUser(loginForm.value);
-    this.loginService.getLoginStatus();
-    this.router.navigateByUrl('/dashboard');
+  submitLoginForm() {
+    if(this.loginService.validateUser(this.loginForm.value)) {
+      this.serverError = false;
+      localStorage.setItem("isLoggedIn", 'Yes');
+      this.loginService.getLoginStatus();
+      this.router.navigateByUrl('/dashboard');
+      this.toastrService.success('Logged In Successfully');
+
+    } else {
+      this.serverError = true;
+    }
+   
   }
 }

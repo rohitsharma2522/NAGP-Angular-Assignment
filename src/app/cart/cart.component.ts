@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product, ProductService } from '../core/public_api';
 import {CartService} from "../core/services/cart.service";
+import { ToastrService } from 'ngx-toastr';
 import {Cart} from "../core/models/cart";
 import { Router } from '@angular/router';
 
@@ -14,7 +15,7 @@ export class CartComponent  {
   public cartList:Cart[];
   public totalPrice: number;
   quantity: number;
-  constructor(protected cartService: CartService, private router: Router) {
+  constructor(protected cartService: CartService, private router: Router, private toastrService: ToastrService) {
       this.loadCart();
   }
   loadCart = () => {

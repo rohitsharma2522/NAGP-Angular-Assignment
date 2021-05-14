@@ -81,7 +81,7 @@
                   !checkoutForm.get('address').valid
               }" 
             >
-          <div  *ngIf="checkoutForm.get('address').errors?.required" class="invalid-feedback">
+          <div *ngIf="checkoutForm.get('address').errors?.required" class="invalid-feedback">
             Enter shipping address
           </div>
         </div>
@@ -101,23 +101,22 @@
 
         <div class="row">
             <div class="col-md-3 mb-3">
-                <label for="phonenumber">Phone-Number</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="phonenumber"
-                    formControlName="phonenumber"
-                    required
-                    [ngClass]="{
-                        'is-invalid':
-                          (checkoutForm.get('phonenumber').touched || checkoutForm.get('phonenumber').dirty) &&
-                          !checkoutForm.get('phonenumber').valid
-                      }" 
-
-                >
-                <div *ngIf="checkoutForm.get('phonenumber').errors?.required" class="invalid-feedback">
-                   Please enter phone number
-                </div>
+                <label for="phonenumber">Phone number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phonenumber"
+            formControlName="phonenumber"
+            required
+            [ngClass]="{
+                'is-invalid':
+                  (checkoutForm.get('phonenumber').touched || checkoutForm.get('phonenumber').dirty) &&
+                  !checkoutForm.get('phonenumber').valid
+              }" 
+            >
+          <div *ngIf="checkoutForm.get('phonenumber').errors?.required" class="invalid-feedback">
+            Enter phonenumber
+          </div>
             </div>
           <div class="col-md-3 mb-3">
             <label for="state">State</label>

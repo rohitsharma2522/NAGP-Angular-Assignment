@@ -5,10 +5,10 @@ import {DashboardComponent} from '../app/dashboard/dashboard.component'
 import {ProductDetailComponent} from '../app/product-detail/product-detail.component'
 
 import { ProductsResolver } from './resolver/products.resolver';
-import { ProductResolver } from './resolver/product.resolver';
 import { CartComponent } from './cart/cart.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderPlacedComponent } from './order-placed/order-placed.component';
 
 const routes: Routes = [
   {
@@ -33,6 +33,11 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'order-placed',
+    component: OrderPlacedComponent,
     canActivate: [AuthGuard]
   },
   {

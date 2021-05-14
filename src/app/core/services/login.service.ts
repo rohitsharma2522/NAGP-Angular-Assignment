@@ -41,11 +41,11 @@ export class LoginService implements OnInit{
 
   /** Method that validates login credentials passed by user. */
   validateUser(user: IUser): boolean {
-    let validUser = true;
-    // if (this.loginData.findIndex(usr => user.username.toLowerCase() === usr.username.toLowerCase()) > -1) {
-    //   validUser = true;
-    // }
-    //this.userLoggedIn.next(validUser);
+    let validUser = false;
+    if (this.loginData.findIndex(usr => user.username.toLowerCase() === usr.username.toLowerCase() && user.password.toLowerCase() === usr.password.toLowerCase()) > -1) {
+      validUser = true;
+    }
+    this.userLoggedIn.next(validUser);
     return validUser;
   }
 

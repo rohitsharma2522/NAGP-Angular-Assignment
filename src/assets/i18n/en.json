@@ -1,0 +1,16 @@
+{
+    "logout":"Logout",
+    "changeLanguage": "Change Language",
+    "login": "Login", 
+    "myorders": "My Orders", 
+    "checkOut": "Checkout", 
+    "addToCart": "Add To Cart", 
+    "firstName": "First Name",  
+    "lastName": "LastName", 
+    "emailAddress": "Email", 
+    "zip": "Zip Code", 
+    "phonenumber": "Phone Number",
+    "yourShoppingCart":"Your Shopping Cart",
+    "emptyCart": "Your cart is empty.",
+    "loginForm": "Login Form"
+}

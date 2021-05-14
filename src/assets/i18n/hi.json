@@ -1,0 +1,19 @@
+{
+    "logout":"लॉग आउट",
+    "changeLanguage": "भाषा का चयन करें",
+    "login": "लॉग इन करें", 
+    "myorders": "मेरे ऑर्डर", 
+    "checkOut": "खरीदने के लिए आगे बढ़ें", 
+    "addToCart": "टोकरी में डालें", 
+    "firstName": "नाम",  
+    "lastName": "अंतिम नाम", 
+    "middleName": "मध्य नाम", 
+    "emailAddress": "ईमेल पता", 
+    "code": "पिन कोड", 
+    "number": "फ़ोन नंबर",
+    "yourShoppingCart":"आपका शॉपिंग कार्ट",
+    "emptyCart": "आपकी कार्ट खाली है.",
+    "loginForm": "लॉगिन फॉर्म"
+
+
+}

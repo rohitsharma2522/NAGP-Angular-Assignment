@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   products: Product[] = [];
   userLoggedIn : boolean = false;
   searchProduct: string="";
+  searchProductsByCategory : string="";
   constructor(private readonly route: ActivatedRoute, private readonly router: Router, private productService: ProductService) { 
 
     if(localStorage.getItem('isLoggedIn') === 'Yes'){
@@ -38,6 +39,21 @@ export class DashboardComponent implements OnInit {
         }
         data = res.filter(o => {
           return o.name.toLowerCase().indexOf(this.searchProduct.toLowerCase()) != -1;
+        });
+        this.products = data;
+      });
+      
+    });
+    this.productService.searchByCategory.subscribe(message => {
+      this.searchProductsByCategory = message;
+      let data;
+      this.productService.getProducts().subscribe((res: Product[]) => {
+        if(!this.searchProductsByCategory) {
+          this.products = res;
+          return;
+        }
+        data = res.filter(o => {
+          return o.category.toLowerCase().indexOf(this.searchProductsByCategory.toLowerCase()) != -1;
         });
         this.products = data;
       });
