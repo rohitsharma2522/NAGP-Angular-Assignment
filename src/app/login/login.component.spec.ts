@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 fdescribe('LoginComponent', () => {
@@ -14,7 +16,7 @@ fdescribe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[RouterTestingModule,  FormsModule,
+      imports:[RouterTestingModule,  FormsModule, BrowserAnimationsModule, ToastrModule.forRoot(),
         ReactiveFormsModule,TranslateModule.forRoot()
 ],
       declarations: [ LoginComponent ]
