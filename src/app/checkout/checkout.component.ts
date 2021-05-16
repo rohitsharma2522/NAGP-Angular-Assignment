@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Checkout } from './checkout';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
+import {CartService} from "../core/services/cart.service";
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class CheckoutComponent implements OnInit {
   checkoutForm: FormGroup
   submitted = false;
-  constructor(public formBuilder: FormBuilder, private router: Router) {
+  constructor(public formBuilder: FormBuilder, private router: Router, protected cartService: CartService,) {
     this.checkoutForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -34,7 +35,8 @@ export class CheckoutComponent implements OnInit {
     if (this.checkoutForm.invalid) {
         return;
     }
-
+    this.cartService.reloadCart([]);
+    localStorage.removeItem("cartOrders");
     this.router.navigateByUrl('/order-placed');
   }
 }
